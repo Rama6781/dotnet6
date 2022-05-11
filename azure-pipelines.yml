@@ -34,7 +34,7 @@ stages:
         command: 'publish'
         publishWebProjects: true
         projects: '**/*.csproj'
-        arguments: 'configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+        arguments: '-o testpath'
         zipAfterPublish: true
 
     - task: PublishBuildArtifacts@1
