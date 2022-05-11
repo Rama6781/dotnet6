@@ -8,6 +8,7 @@ trigger:
 
 pool:
   name: 'vm2AgentPool'
+  artifactname: 'Drop'
 
 variables:
   buildConfiguration: 'Release'
@@ -34,7 +35,7 @@ stages:
         command: 'publish'
         publishWebProjects: true
         projects: '**/*.csproj'
-        arguments: 'configuration $(buildConfiguration) --output$("Build.ArtifactStagingDirectory")/$(buildConfiguration)'
+        arguments: 'configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
 
     - task: PublishBuildArtifacts@1
