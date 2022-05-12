@@ -35,11 +35,11 @@ stages:
         command: 'publish'
         publishWebProjects: true
         projects: '**/*.csproj'
-        arguments: 'configuration $(buildConfiguration) --output $(build.ArtifactStagingDirectory)/$(buildConfiguration)'
+        arguments: 'configuration $(buildConfiguration)--output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
 
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(build.ArtifactStagingDirectory)'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
