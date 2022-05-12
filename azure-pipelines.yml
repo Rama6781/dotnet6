@@ -5,6 +5,7 @@
 
 trigger:
 - '*'
+- Master
 
 pool:
   name: 'vm2AgentPool'
